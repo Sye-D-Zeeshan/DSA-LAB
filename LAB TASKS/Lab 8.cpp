@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 class TreeNode {
 public:
     int data;
@@ -70,7 +70,7 @@ private:
         int leftDepth = maxDepth(node->left);
         int rightDepth = maxDepth(node->right);
 
-        return 1 + std::max(leftDepth, rightDepth);
+        return 1 + max(leftDepth, rightDepth);
     }
 
     bool isBST(TreeNode* node, int minValue, int maxValue) {
@@ -93,7 +93,7 @@ private:
 
         postOrderTraversal(node->left);
         postOrderTraversal(node->right);
-        std::cout << node->data << " ";
+        cout << node->data << " ";
     }
 
 public:
@@ -117,7 +117,7 @@ public:
 
     void traversePostOrder() {
         postOrderTraversal(root);
-        std::cout << std::endl;
+        cout << endl;
     }
 };
 
@@ -140,13 +140,13 @@ int main() {
     bst.deleteNode(75);
 
     // Determine depth of the tree
-    std::cout << "Depth of the tree: " << bst.depth() << std::endl;
+    cout << "Depth of the tree: " << bst.depth() << endl;
 
     // Check if it's a Binary Search Tree
-    std::cout << "Is it a Binary Search Tree? " << (bst.isBST() ? "Yes" : "No") << std::endl;
+    cout << "Is it a Binary Search Tree? " << (bst.isBST() ? "Yes" : "No") << endl;
 
     // Traverse using post-order traversal
-    std::cout << "Post-order traversal: ";
+    cout << "Post-order traversal: ";
     bst.traversePostOrder();
 
     return 0;
